@@ -1,7 +1,7 @@
 # ha-weather-card-mini
 Homeassistant Weather Card Mini (Lovelace)
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/jer78/ha-weather-card-mini/blob/master/screen_shot.png)
 
 ## Instructions
 Copy the weather-card-mini.js and weather-card-mini.css to your www/custom_ui folder in home assistant
