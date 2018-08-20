@@ -44,7 +44,7 @@ class WeatherCardMini extends HTMLElement {
       'rainy': 'rainy-5',
       'snowy': 'snowy-6',
       'snowy-rainy': 'rainy-7',
-      'sunny': `${sunLocation}`,
+      'sunny': "clear-day",
       'windy': 'windy',
       'windy-variant': `cloudy-${sunLocation}-3`,
       'exceptional': '!!',
@@ -83,9 +83,9 @@ class WeatherCardMini extends HTMLElement {
       <div class="forecast clear">
           ${forecast.map(daily => `
               <div class="day">
-                  <span class="dayname">${(new Date(daily.datetime)).toString().split(' ')[0]} ${new Date(daily.datetime).toLocaleString('en-US', {hour: 'numeric', hour12: true} )}</span>
+                  <span class="time">${new Date(daily.datetime).toLocaleString('en-US', {hour: 'numeric', hour12: true} )}</span>
                   <br><i class="icon" style="background: none, url(/local/icons/weather_icons/animated/${weatherIcons[daily.condition]}.svg) no-repeat; background-size: contain;"></i>
-                  <br><span class="highTemp">${daily.temperature}${getUnit('temperature')}</span>
+                  <br><span class="hourlyTemp">${daily.temperature}${getUnit('temperature')}</span>
                   <br><span class="precip">${daily.precipitation = daily.precipitation ||0} ${getUnit('precipitation')}</span>
               </div>`).join('')}
       </div>`;
@@ -100,7 +100,7 @@ class WeatherCardMini extends HTMLElement {
 
   // @TODO: This requires more intelligent logic
   getCardSize() {
-    return 1.5;
+    return 1;
   }
 }
 
